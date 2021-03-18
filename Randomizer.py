@@ -1,13 +1,17 @@
 import random as r
 
 def rollADice():
+    result = 0
     dice = int(input("Jumlah dadu : "))
     while True:
-        result = r.randint(1*dice, 6*dice)
+        for _ in range(0,dice):
+            result+=r.randint(1, 6)
         print(result)
         userReq = input("Lempar dadu lagi? [y/n] : ")
         if userReq == "n":
             break
+        else:
+            result = 0
     
 
 def flipCoin():
